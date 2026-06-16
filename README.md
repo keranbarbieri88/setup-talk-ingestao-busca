@@ -26,14 +26,39 @@ Siga os passos abaixo sequencialmente para preparar o ambiente e rodar a aplica�
 ### 1. Pré-requisitos
 Certifique-se de ter instalado em sua máquina:
 * [Python 3.10+](https://www.python.org/)
-* [Docker Desktop](https://www.docker.com/products/docker-desktop/) ativo e rodando ou WSL.
-* Uma chave de API do Google Gemini (Gere gratuitamente no [Google AI Studio](https://aistudio.google.com/))
+  Caso já tenha instalado, verificar se a versão igual 3.10 ou superior:
+  ```powershell
+    python --version
+    ``` 
+  A versão do gerenciador python-dotenv deve ser 1.1.1 conforme `requirements.txt`:
+  ```powershell
+    pip show python-dotenv
+    ```
+  Para instalar:
+  1. Acesse a página oficial de [Downloads do Python para Windows](https://www.python.org/downloads/windows/).
+  2. Clique no botão amarelo "Download Python" (ele detectará automaticamente a versão de 64 bits do seu Windows 11).
+  3. Abra o arquivo baixado (ex: python-3.x.x.exe) na sua pasta de downloads.
+  4. Passo mais importante: Na parte inferior da primeira tela, marque a caixinha "Add Python.exe to PATH" (Adicionar o Python ao PATH). Isso permite que você rode comandos Python de qualquer pasta no terminal.Clique em "Install Now" e aguarde a conclusão
+
+* [Docker WSL](https://docs.docker.com/desktop/features/wsl/) 
+  Caso já tenha instalado, verificar através do comando:
+  ```powershell
+    wsl --version
+    ``` 
+  Para instalar:
+   ```powershell
+    wsl --install
+    ``` 
+  Isso ativará os recursos necessários, baixará o kernel do Linux e instalará a distribuição padrão (Ubuntu).
+  
+  
+* [API do Google Gemini](https://aistudio.google.com/) Gere gratuitamente no `Google AI Studio`.
 
 ### 2. Configurando o Ambiente Virtual (Venv)
 Abra o terminal na raiz do projeto (`SETUP-TALK-INGESTAO-BUSCA`) e execute os comandos correspondentes ao seu sistema operacional para criar e ativar o ambiente isolado do Python:
 
 * **Criar o ambiente virtual:**
-    ```bash
+    ```powershell
     python -m venv .venv
     ```
 
